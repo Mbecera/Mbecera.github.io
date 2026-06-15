@@ -1,386 +1,284 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV y Perfil Académico - Jonathan Yimmy Mamani Pari</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Jonathan Yimmy Mamani Pari</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Arial,Helvetica,sans-serif;background:#f0f2f5;color:#222;line-height:1.6}
+  .cv{max-width:900px;margin:40px auto;padding:0 20px 40px}
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color:#333;
-            max-width:900px;
-            margin:auto;
-            padding:20px;
-            background:#f4f6f9;
-        }
+  /* HEADER */
+  .header{background:#003366;color:#fff;padding:36px 40px;border-radius:12px 12px 0 0}
+  .header-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem}
+  .header-name{font-size:30px;font-weight:700;margin-bottom:6px}
+  .header-sub{font-size:14px;color:#b8cce4;line-height:1.7}
+  .header-contact{text-align:right;font-size:13px;color:#b8cce4;line-height:1.9;white-space:nowrap}
+  .header-contact a{color:#7ec8f7;text-decoration:none}
+  .badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .badge{font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,0.15);color:#fff;letter-spacing:.03em}
 
-        header{
-            background:#003366;
-            color:white;
-            text-align:center;
-            padding:30px;
-            border-radius:10px 10px 0 0;
-        }
+  /* BODY */
+  .body{background:#fff;padding:32px 40px;border-radius:0 0 12px 12px;box-shadow:0 4px 16px rgba(0,0,0,0.08)}
 
-        header h1{
-            margin:0;
-            font-size:35px;
-        }
+  /* SECTION */
+  .section{margin-bottom:28px}
+  .section-title{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#003366;border-bottom:2px solid #003366;padding-bottom:8px;margin-bottom:16px}
 
-        header p{
-            font-size:18px;
-            color:#d8d8d8;
-        }
+  /* PROFILE */
+  .profile-text{font-size:15px;color:#333;line-height:1.8}
+  .highlight{color:#003366;font-weight:700}
 
-        .container{
-            background:white;
-            padding:30px;
-            box-shadow:0 4px 8px rgba(0,0,0,0.1);
-            border-radius:0 0 10px 10px;
-        }
+  /* TIMELINE */
+  .timeline-item{display:grid;grid-template-columns:170px 1fr;gap:20px;padding:12px 0;border-bottom:1px solid #eee}
+  .timeline-item:last-child{border-bottom:none;padding-bottom:0}
+  .tl-left{}
+  .tl-period{font-size:12.5px;font-weight:700;color:#003366}
+  .tl-inst{font-size:11.5px;color:#888;margin-top:3px;line-height:1.4}
+  .tl-role{font-size:15px;font-weight:700;color:#222;margin-bottom:5px}
+  .tl-detail{font-size:13.5px;color:#555;line-height:1.65}
 
-        h2{
-            color:#003366;
-            border-bottom:2px solid #003366;
-            padding-bottom:5px;
-            margin-top:30px;
-        }
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+  .skill-chip{background:#f0f5ff;border:1px solid #c8d8f0;border-radius:8px;padding:9px 14px;font-size:13px;font-weight:600;color:#003366;text-align:center}
 
-        table{
-            width:100%;
-            border-collapse:collapse;
-            margin:15px 0;
-        }
+  /* TWO COL */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 
-        td, th{
-            border:1px solid #ddd;
-            padding:12px;
-        }
+  /* CERTS */
+  .cert-item{border-left:3px solid #1a73e8;background:#f7faff;border-radius:0 8px 8px 0;padding:9px 14px;margin-bottom:9px}
+  .cert-year{font-size:11px;color:#888;margin-bottom:2px;font-weight:600}
+  .cert-name{font-size:13px;color:#222;line-height:1.4}
 
-        th{
-            background:#f0f2f5;
-        }
+  /* LANG */
+  .lang-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #eee}
+  .lang-row:last-child{border-bottom:none}
+  .lang-name{font-size:14px;color:#222}
+  .lang-level{font-size:11.5px;font-weight:700;padding:3px 12px;border-radius:20px;background:#e0f0e8;color:#1a6b3a}
 
-        .label{
-            font-weight:bold;
-            width:25%;
-            background:#fafafa;
-        }
+  /* INTERESTS */
+  .interest-tag{display:inline-block;font-size:12.5px;padding:5px 14px;border:1px solid #c8d8f0;border-radius:20px;color:#003366;margin:4px 4px 0 0;background:#f5f8ff}
 
-        .card{
-            border-left:5px solid #3498db;
-            padding:12px;
-            margin:15px 0;
-            background:#fafafa;
-        }
+  /* FOOTER */
+  .footer{text-align:center;margin-top:28px;font-size:12.5px;color:#aaa}
 
-        .titulo{
-            font-weight:bold;
-            color:#003366;
-        }
+  @media print{
+    body{background:#fff}
+    .cv{margin:0;padding:0}
+    .header{border-radius:0}
+    .body{box-shadow:none;border-radius:0}
+    .footer{display:none}
+  }
 
-        .detalle{
-            color:#555;
-            font-size:15px;
-        }
-
-        ul li{
-            margin-bottom:8px;
-        }
-
-        footer{
-            text-align:center;
-            color:#777;
-            margin-top:30px;
-            font-size:14px;
-        }
-
-        a{
-            color:#0066cc;
-            text-decoration:none;
-        }
-
-        a:hover{
-            text-decoration:underline;
-        }
-
-    </style>
-
+  @media(max-width:640px){
+    .header-inner{flex-direction:column}
+    .header-contact{text-align:left}
+    .timeline-item{grid-template-columns:1fr}
+    .two-col{grid-template-columns:1fr}
+  }
+</style>
 </head>
-
 <body>
 
-
-<header>
-
-    <h1>Jonathan Yimmy Mamani Pari</h1>
-
-    <p>
-        Estudiante de Ingeniería Estadística e Informática |
-        Técnico en Tecnologías de la Información
-    </p>
-
-</header>
-
-
-<div class="container">
-
-
-<h2>Datos Personales</h2>
-
-<table>
-
-<tr>
-<td class="label">DNI</td>
-<td>74725291</td>
-</tr>
-
-<tr>
-<td class="label">Fecha de nacimiento</td>
-<td>23 de mayo del 2003</td>
-</tr>
-
-<tr>
-<td class="label">Edad</td>
-<td>22 años</td>
-</tr>
-
-<tr>
-<td class="label">Lugar de residencia</td>
-<td>Puno, Perú</td>
-</tr>
-
-<tr>
-<td class="label">Estado civil</td>
-<td>Soltero</td>
-</tr>
-
-<tr>
-<td class="label">Dirección</td>
-<td>Jr. Víctor Echave 278, Barrio Porteño - Puno</td>
-</tr>
-
-<tr>
-<td class="label">Contacto</td>
-<td>
-WhatsApp: 917831235 <br>
-Correo: vannmamani@gmail.com
-</td>
-</tr>
-
-</table>
-
-
-
-<h2>Perfil Profesional</h2>
-
-<p>
-Estudiante de Ingeniería Estadística e Informática de la
-Universidad Nacional del Altiplano y egresado de Arquitectura
-de Plataformas y Servicios de Tecnologías de la Información
-del Instituto José Antonio Encinas.
-
-Poseo conocimientos en ciencia de datos, programación,
-estadística aplicada, soporte técnico, redes y administración
-de sistemas informáticos.
-
-Me caracterizo por mi responsabilidad, disciplina,
-capacidad de liderazgo y trabajo en equipo.
-</p>
-
-
-
-<h2>Formación Académica</h2>
-
-
-<table>
-
-<tr>
-<th>Periodo</th>
-<th>Formación</th>
-<th>Institución</th>
-</tr>
-
-
-<tr>
-<td>2022 - Actualidad</td>
-<td>
-Ingeniería Estadística e Informática
-</td>
-<td>
-Universidad Nacional del Altiplano
-</td>
-</tr>
-
-
-<tr>
-<td>2023 - 2025</td>
-<td>
-Arquitectura de Plataformas y Servicios de Tecnologías de la Información
-</td>
-<td>
-IESTP José Antonio Encinas
-</td>
-</tr>
-
-</table>
-
-
-
-<h2>Experiencia Laboral</h2>
-
-
-<div class="card">
-
-<div class="titulo">
-Registrador y Verificador de Inventario - EMSA Puno
-</div>
-
-<div class="detalle">
-2025<br>
-Control y verificación de activos fijos, actualización de registros administrativos,
-organización documental y apoyo en procesos de auditoría.
-</div>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="titulo">
-Sargento Primero - Policía Militar N.º 4 (Ejército del Perú)
-</div>
-
-<div class="detalle">
-2021 - 2023<br>
-Responsable de actividades de logística, administración de recursos,
-coordinación de personal y cumplimiento de operaciones militares.
-</div>
-
-</div>
-
-
-
-<h2>Áreas de Especialización</h2>
-
-
-<ul>
-
-<li>Ciencia de Datos y análisis estadístico.</li>
-
-<li>Programación con Python y R.</li>
-
-<li>Bases de datos y SQL.</li>
-
-<li>Soporte técnico y administración de sistemas.</li>
-
-<li>Redes informáticas y sistemas Linux.</li>
-
-<li>Investigación aplicada e innovación tecnológica.</li>
-
-</ul>
-
-
-
-<h2>Habilidades Tecnológicas</h2>
-
-
-<ul>
-
-<li>Python</li>
-<li>R</li>
-<li>SQL</li>
-<li>LaTeX</li>
-<li>Excel Avanzado</li>
-<li>Power BI</li>
-<li>Linux</li>
-<li>Git y GitHub</li>
-
-</ul>
-
-
-
-<h2>Certificados y Cursos</h2>
-
-
-<div class="card">
-2025 - Ciencia de Datos I: Exploratory Data Analysis (UNI - Oficina de Tecnologías de la Información)
-</div>
-
-
-<div class="card">
-2025 - Power BI Básico (UNI - Oficina de Tecnologías de la Información)
-</div>
-
-
-<div class="card">
-2025 - Análisis de Datos con Excel (UNI - Oficina de Tecnologías de la Información)
-</div>
-
-
-<div class="card">
-2024 - Habilidades Blandas para Profesionales en TIC (Colegio de Ingenieros del Perú)
-</div>
-
-
-<div class="card">
-2024 - Tecnologías Emergentes en Computación e Informática (UNAP)
-</div>
-
-
-<div class="card">
-2024 - Congreso Regional de Computación e Informática (IESTP José Antonio Encinas)
-</div>
-
-
-<div class="card">
-2023 - Ofimática Profesional (IESTP José Antonio Encinas)
-</div>
-
-
-
-<h2>Idiomas</h2>
-
-<ul>
-
-<li>Castellano: Nativo.</li>
-
-<li>Inglés: Nivel básico A2.</li>
-
-</ul>
-
-
-
-<h2>Intereses Profesionales</h2>
-
-<ul>
-
-<li>Inteligencia Artificial y Machine Learning.</li>
-
-<li>Analítica de datos y modelos estadísticos.</li>
-
-<li>Ciberseguridad.</li>
-
-<li>Desarrollo de software.</li>
-
-<li>Investigación científica.</li>
-
-</ul>
-
+<div class="cv">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-inner">
+      <div>
+        <div class="header-name">Jonathan Yimmy Mamani Pari</div>
+        <div class="header-sub">
+          Estudiante de Ingeniería Estadística e Informática · UNA Puno<br>
+          Estudiante de Administración de Empresas · UCV<br>
+          Técnico Egresado en Arquitectura de plataformas y servicios de tecnologías de la información
+        </div>
+        <div class="badge-row">
+          <span class="badge">Ingeniería de Datos</span>
+          <span class="badge">Data Science</span>
+          <span class="badge">Machine Learning</span>
+          <span class="badge">Python · R · SQL</span>
+        </div>
+      </div>
+      <div class="header-contact">
+        <div>Puno, Perú</div>
+        <div>DNI: 74725291</div>
+        <div>Nacimiento: 23 mayo 2003</div>
+        <div>WhatsApp: 917 831 235</div>
+        <div><a href="mailto:vannmamani@gmail.com">vannmamani@gmail.com</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- PERFIL -->
+    <div class="section">
+      <div class="section-title">Perfil Profesional</div>
+      <p class="profile-text">
+        Estudiante de <span class="highlight">Ingeniería Estadística e Informática</span> en la Universidad Nacional del Altiplano y de
+        <span class="highlight">Administración de Empresas</span> en la Universidad César Vallejo. Técnico egresado de la carrera de
+        Arquitectura de Plataformas y Servicios de Tecnologías de la Información del Instituto José Antonio Encinas.
+        Con experiencia en ciencia de datos, análisis estadístico, administración de sistemas e infraestructura tecnológica.<br><br>
+        Orientado al rol de <span class="highlight">Ingeniero de Datos</span>, con interés en diseño e implementación de pipelines de datos,
+        modelado estadístico, inteligencia artificial y arquitectura de sistemas informáticos. Me caracterizo por la disciplina,
+        responsabilidad, liderazgo y capacidad de trabajo en entornos exigentes.
+      </p>
+    </div>
+
+    <!-- FORMACIÓN ACADÉMICA -->
+    <div class="section">
+      <div class="section-title">Formación Académica</div>
+
+      <div class="timeline-item">
+        <div class="tl-left">
+          <div class="tl-period">2022 – Actualidad</div>
+          <div class="tl-inst">Universidad Nacional del Altiplano · Puno</div>
+        </div>
+        <div>
+          <div class="tl-role">Ingeniería Estadística e Informática</div>
+          <div class="tl-detail">Formación en estadística aplicada, ciencia de datos, programación, bases de datos y sistemas de información. Enfocado en técnicas de análisis y modelado orientadas a la ingeniería de datos.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-left">
+          <div class="tl-period">2025 – Actualidad</div>
+          <div class="tl-inst">Universidad César Vallejo · UCV</div>
+        </div>
+        <div>
+          <div class="tl-role">Administración de Empresas</div>
+          <div class="tl-detail">Formación en gestión empresarial, dirección organizacional, finanzas y administración de recursos. Complementa la formación técnica con visión estratégica y de negocios aplicada al entorno tecnológico.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-left">
+          <div class="tl-period">2023 – 2025</div>
+          <div class="tl-inst">IESTP José Antonio Encinas · Puno</div>
+        </div>
+        <div>
+          <div class="tl-role">Arquitectura de Plataformas y Servicios de Tecnologías de la Información</div>
+          <div class="tl-detail">Técnico egresado. Formación en infraestructura de redes, servicios en la nube, administración de sistemas Linux y arquitectura de plataformas tecnológicas.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-left">
+          <div class="tl-period">2021 – 2023</div>
+          <div class="tl-inst">Ejército del Perú</div>
+        </div>
+        <div>
+          <div class="tl-role">Sargento Primero — Policía Militar N.º 4</div>
+          <div class="tl-detail">Responsable de actividades de logística, administración de recursos, coordinación de personal y ejecución de operaciones militares. Formación en liderazgo, disciplina y trabajo bajo presión en entornos de alta exigencia.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EXPERIENCIA LABORAL -->
+    <div class="section">
+      <div class="section-title">Experiencia Laboral</div>
+
+      <div class="timeline-item">
+        <div class="tl-left">
+          <div class="tl-period">2025</div>
+          <div class="tl-inst">EMSA Puno</div>
+        </div>
+        <div>
+          <div class="tl-role">Registrador y Verificador de Inventario</div>
+          <div class="tl-detail">Control y verificación de activos fijos, actualización de registros administrativos, organización documental y apoyo en procesos de auditoría institucional.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- HABILIDADES -->
+    <div class="section">
+      <div class="section-title">Habilidades Tecnológicas</div>
+      <div class="skills-grid">
+        <div class="skill-chip">Python</div>
+        <div class="skill-chip">R</div>
+        <div class="skill-chip">SQL</div>
+        <div class="skill-chip">Power BI</div>
+        <div class="skill-chip">Excel Avanzado</div>
+        <div class="skill-chip">Git / GitHub</div>
+        <div class="skill-chip">Linux</div>
+        <div class="skill-chip">LaTeX</div>
+      </div>
+    </div>
+
+    <!-- DOS COLUMNAS -->
+    <div class="two-col">
+
+      <!-- CERTIFICADOS -->
+      <div class="section">
+        <div class="section-title">Certificados y Cursos</div>
+        <div class="cert-item">
+          <div class="cert-year">2025 · UNI — Oficina de Tecnologías de la Información</div>
+          <div class="cert-name">Ciencia de Datos I: Exploratory Data Analysis</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-year">2025 · UNI — Oficina de Tecnologías de la Información</div>
+          <div class="cert-name">Power BI Básico</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-year">2025 · UNI — Oficina de Tecnologías de la Información</div>
+          <div class="cert-name">Análisis de Datos con Excel</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-year">2024 · Colegio de Ingenieros del Perú</div>
+          <div class="cert-name">Habilidades Blandas para Profesionales en TIC</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-year">2024 · UNAP</div>
+          <div class="cert-name">Tecnologías Emergentes en Computación e Informática</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-year">2024 · IESTP José Antonio Encinas</div>
+          <div class="cert-name">Congreso Regional de Computación e Informática</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-year">2023 · IESTP José Antonio Encinas</div>
+          <div class="cert-name">Ofimática Profesional</div>
+        </div>
+      </div>
+
+      <div>
+        <!-- IDIOMAS -->
+        <div class="section">
+          <div class="section-title">Idiomas</div>
+          <div class="lang-row">
+            <span class="lang-name">Castellano</span>
+            <span class="lang-level">Nativo</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">Inglés</span>
+            <span class="lang-level">Básico A2</span>
+          </div>
+        </div>
+
+        <!-- INTERESES -->
+        <div class="section">
+          <div class="section-title">Intereses Profesionales</div>
+          <div style="padding-top:6px">
+            <span class="interest-tag">Ingeniería de Datos</span>
+            <span class="interest-tag">Inteligencia Artificial</span>
+            <span class="interest-tag">Machine Learning</span>
+            <span class="interest-tag">Analítica Estadística</span>
+            <span class="interest-tag">Ciberseguridad</span>
+            <span class="interest-tag">Desarrollo de Software</span>
+            <span class="interest-tag">Investigación Científica</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /body -->
+
+  <div class="footer">CV Académico y Profesional — Jonathan Yimmy Mamani Pari · 2026</div>
 
 </div>
-
-
-<footer>
-
-CV Académico y Profesional de Jonathan Yimmy Mamani Pari - 2026
-
-</footer>
-
-
 </body>
-
 </html>
